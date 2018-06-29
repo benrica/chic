@@ -1,0 +1,139 @@
+[root@slave _chic]# ./chic
+
+♪Y(^_^)Y Main_menu Fri Jun 29 20:04:08 2018
++-------------------------------------------------
+| 01) test_sub 二级子菜单 02) test_sql 测试sql查询
++-------------------------------------------------
+                                x|q)退出 h|H)帮助
+Choose:1
+
+♪Main→01)二级子菜单
++-------------------------------------------------------------------------------
+| 01) test_sql2 测试sql查询  02) test_sub2   三级子菜单   03) test_func 函数调用
+| 04) test_cmd  远程执行命令 05) test_script 远程调用脚本
++-------------------------------------------------------------------------------
+                                                       b)返回 x|q)退出 h|H)帮助
+Choose:1
+
+♪title2
+--------------------------------------
+[dburl:localhost:1521/orcl]
+select * from INSTRUCTOR
+--------------------------------------
+INSTRUCTOR_ID SALUTATION FIRST_NAME LAST_NAME STREET_ADDRESS ZIP   PHONE      CREATED_BY CREATED_DATE        MODIFIED_BY MODIFIED_DATE       
+------------- ---------- ---------- --------- -------------- ----- ---------- ---------- ------------------- ----------- ------------------- 
+101           Mr         Fernand    Hanks     100 East 87th  10015 2125551212 ESILVEST   2007-01-02 00:00:00 ESILVEST    2007-01-02 00:00:00 
+102           Mr         Tom        Wojick    518 West 120th 10025 2125551212 ESILVEST   2007-01-02 00:00:00 ESILVEST    2007-01-02 00:00:00 
+103           Ms         Nina       Schorin   210 West 101st 10025 2125551212 ESILVEST   2007-01-02 00:00:00 ESILVEST    2007-01-02 00:00:00 
+104           Mr         Gary       Pertez    34 Sixth Ave   10035 2125551212 ESILVEST   2007-01-02 00:00:00 ESILVEST    2007-01-02 00:00:00 
+105           Ms         Anita      Morris    34 Maiden Lane 10015 2125551212 ESILVEST   2007-01-02 00:00:00 ESILVEST    2007-01-02 00:00:00 
+106           Rev        Todd       Smythe    210 West 101st 10025 2125551212 ESILVEST   2007-01-02 00:00:00 ESILVEST    2007-01-02 00:00:00 
+107           Dr         Marilyn    Frantzen  254 Bleeker    10005 2125551212 ESILVEST   2007-01-02 00:00:00 ESILVEST    2007-01-02 00:00:00 
+108           Mr         Charles    Lowry     518 West 120th 10025 2125551212 ESILVEST   2007-01-02 00:00:00 ESILVEST    2007-01-02 00:00:00 
+109           Hon        Rick       Chow      56 10th Avenue 10015 2125551212 ESILVEST   2007-01-02 00:00:00 ESILVEST    2007-01-02 00:00:00 
+110           Ms         Irene      Willig    415 West 101st None  2125551212 ARISCHER   2007-03-11 00:00:00 ARISCHER    2007-03-11 00:00:00 
+
+10 rows selected. Elapsed: 0.011619 seconds
+
+Choose:2
+
+♪Main→01)二级子菜单→02)三级子菜单
++----------------------------------------------------------------------------
+| 01) batch_put 批量文件上传 02) batch_get 批量文件下载 03) ss.key3 ss.title3
+| 04) ss.key4   ss.title4    05) ss.key5   ss.title5   
++----------------------------------------------------------------------------
+                                                    b)返回 x|q)退出 h|H)帮助
+Choose:1
+*** SFTP Connect root@192.168.3.8 succ.
+*** Put /root/_learn/_chic/chic to 192.168.3.8:/root/_tmp_put_dir/chic success.
+*** Batch Put success: 1 failed: 0 
+Choose:2
+*** SFTP Connect root@192.168.3.8 succ.
+*** Warning Caught exception: <class 'FileNotFoundError'>: [Errno 2] No such file
+*** Get /tmp/aa.py from 192.168.3.8 failed.
+Choose:b
+
+♪Main→01)二级子菜单
++-------------------------------------------------------------------------------
+| 01) test_sql2 测试sql查询  02) test_sub2   三级子菜单   03) test_func 函数调用
+| 04) test_cmd  远程执行命令 05) test_script 远程调用脚本
++-------------------------------------------------------------------------------
+                                                       b)返回 x|q)退出 h|H)帮助
+Choose:3
+call_module_func: default
+Choose:4
+*** SSH Connect root@192.168.3.8 succ.
+*** Excute cmd [find /root 2>/dev/null|head] and the out_result is below.
+
+/root
+/root/b
+/root/c
+/root/.kde
+/root/.kde/tmp-master.hadoop
+/root/.kde/cache-master.hadoop
+/root/.kde/share
+/root/.kde/share/config
+/root/.kde/share/config/kio_httprc
+/root/.kde/share/config/kcmdisplayrc
+
+*** Excute cmd [ifconfig -a] and the out_result is below.
+
+eth0      Link encap:Ethernet  HWaddr 00:0C:29:03:1A:EA  
+          inet addr:192.168.3.8  Bcast:192.168.3.255  Mask:255.255.255.0
+          inet6 addr: fe80::20c:29ff:fe03:1aea/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1077779 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:427485 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:408041692 (389.1 MiB)  TX bytes:231981273 (221.2 MiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:7083348 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:7083348 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:2262617871 (2.1 GiB)  TX bytes:2262617871 (2.1 GiB)
+
+
+Choose:5
+*** SSH Connect root@192.168.3.8 succ.
+*** Excute cmd [vmstat 1 10] and the out_result is below.
+
+procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0   3288 611052 252296 1504632    0    0     4    17   71   60  4  0 96  0  0
+ 0  0   3288 611068 252296 1504636    0    0     0     0  286  723  2  1 97  0  0
+ 0  0   3288 610936 252296 1504636    0    0     0     0  378  893  3  2 95  0  0
+ 0  0   3288 610952 252296 1504636    0    0     0    12  299  766  2  1 94  3  0
+ 0  0   3288 610952 252296 1504636    0    0     0    92  290  753  1  0 97  2  0
+ 0  0   3288 610952 252296 1504636    0    0     0     0  288  692  2  1 97  0  0
+ 0  0   3288 610952 252296 1504636    0    0     0     0  315  765  2  1 97  0  0
+ 0  0   3288 610952 252296 1504636    0    0     0     0  366  809  4  2 94  0  0
+ 1  0   3288 610952 252296 1504636    0    0     0     0  350  862  1  1 98  0  0
+ 0  0   3288 610952 252296 1504636    0    0     0    52  313  777  2  0 97  1  0
+
+*** Excute cmd [perl b.pl aa bb cc] and the out_result is below.
+
+test.......... args: aa bb cc
+
+Choose:s
+
+♪Main→01)二级子菜单
++-------------------------------------------------------------------------------
+| 01) test_sql2 测试sql查询  02) test_sub2   三级子菜单   03) test_func 函数调用
+| 04) test_cmd  远程执行命令 05) test_script 远程调用脚本
++-------------------------------------------------------------------------------
+                                                       b)返回 x|q)退出 h|H)帮助
+Choose:b
+
+♪Y(^_^)Y Main_menu Fri Jun 29 20:05:35 2018
++-------------------------------------------------
+| 01) test_sub 二级子菜单 02) test_sql 测试sql查询
++-------------------------------------------------
+                                x|q)退出 h|H)帮助
+Choose:x
+
+Quit at 2018-06-29 20:05:37.297710
+[root@slave _chic]# 
