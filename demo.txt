@@ -133,7 +133,7 @@ Choose:b
 | 01) test_sub 二级子菜单 02) test_sql 测试sql查询
 +-------------------------------------------------
                                 x|q)退出 h|H)帮助
-Choose:x
+Choose:x 
 
 Quit at 2018-06-29 20:05:37.297710
 [root@slave _chic]# 
