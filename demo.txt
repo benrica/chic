@@ -51,7 +51,7 @@ Choose:2
 *** SFTP Connect root@192.168.3.8 succ.
 *** Warning Caught exception: <class 'FileNotFoundError'>: [Errno 2] No such file
 *** Get /tmp/aa.py from 192.168.3.8 failed.
-Choose:b
+Choose:b 
 
 ♪Main→01)二级子菜单
 +-------------------------------------------------------------------------------
